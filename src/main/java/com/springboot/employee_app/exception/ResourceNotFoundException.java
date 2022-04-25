@@ -3,16 +3,18 @@ package com.springboot.employee_app.exception;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@ResponseStatus(HttpStatus.NOT_FOUND)
-public class ResourceNotFoundException extends RuntimeException{
-    private String resourceName;
-    private String fieldName;
-    private Object fieldValue;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-    public ResourceNotFoundException( String resourceName, String fieldName, Object fieldValue) {
-        super(String.format("%s not found with %s : '%s'", resourceName, fieldName, fieldValue));
-        this.resourceName = resourceName;
-        this.fieldName = fieldName;
-        this.fieldValue = fieldValue;
-    }
+@ResponseStatus(HttpStatus.NOT_FOUND)
+@Getter
+@Setter
+@AllArgsConstructor
+public class ResourceNotFoundException extends RuntimeException {
+	private static final long serialVersionUID = 1L;
+	private String resourceName;
+	private String fieldName;
+	private Object fieldValue;
+
 }

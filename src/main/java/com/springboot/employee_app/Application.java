@@ -4,10 +4,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class EmployeeAppApplication {
+public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(EmployeeAppApplication.class, args);
+    	System.setProperty("spring.main.lazy-initialization", "true");
+    	//System.setProperty("spring.devtools.restart.enabled", "false");
+        SpringApplication.run(Application.class, args);
     }
 
 }
